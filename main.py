@@ -10,7 +10,7 @@ with col1:
 with col2:
     st.title("Lakshya Dhingra")
     content = """
-    Hi, I am Lakshya! I am a student, majoring in Computer Science, learning Python. 
+    Hi, I am Lakshya! I am a sophomore, majoring in Computer Science, learning Python. 
     I am studying at Barrett the Honors College, at Arizona State University.
     """
     st.info(content)
@@ -20,13 +20,19 @@ Below you can find some of the apps built by me in Python, feel free to contact 
 """
 st.write(content2)
 
-col3, col4 = st.columns(2)
+col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
 
 df = pandas.read_csv("data.csv", sep=";")
 with col3:
-    for index,row in df[:10].iterrows():
+    for index, row in df[:10].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
 
 with col4:
-    for index,row in df[10:].iterrows():
+    for index, row in df[10:].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
