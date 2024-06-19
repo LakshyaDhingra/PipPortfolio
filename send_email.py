@@ -8,8 +8,7 @@ def emailsend(message):
 
     password = os.getenv("PASSWORD")
     username = os.getenv("EMAIL")
-
-    receiver = os.getenv("EMAIL")
+    receiver = os.getenv("EMAIL2")
     my_context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL(host, port, context=my_context) as server:
