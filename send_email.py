@@ -1,5 +1,8 @@
 import smtplib, ssl
 import os
+import dotenv
+
+dotenv.load_dotenv()
 
 
 def emailsend(message):
@@ -7,7 +10,7 @@ def emailsend(message):
     port = 465
 
     username = os.getenv("EMAIL")
-    password = os.environ.get("PASSWORD")
+    password = os.getenv("PASSWORD")
     receiver = os.getenv("EMAIL2")
     my_context = ssl.create_default_context()
 
