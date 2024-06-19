@@ -12,3 +12,8 @@ with col2:
     I am studying at Barrett the Honors College, at Arizona State University.
     """
     st.info(content)
+
+content2 = """
+Below you can find some of the apps built by me in Python, feel free to contact me
+"""
+st.write(content2)
