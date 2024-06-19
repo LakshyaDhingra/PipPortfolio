@@ -16,3 +16,5 @@ From: {user_email}
     if submit_button:
         send_email.emailsend(user_message)
         st.info("The email was sent successfully")
+
+# The email sending works locally but not on web server such as streamlit
